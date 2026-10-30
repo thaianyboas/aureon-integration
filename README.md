@@ -25,3 +25,7 @@ See [distribution strategy](https://github.com/thaianyboas/aureon-dashboard/blob
 ## Development branch
 
 Verified changes are published directly to `master`, without development branches or releases. `main` is retained as the original preparation checkpoint. The repository remains unpromoted: no `custom_components` installation payload is published on either branch. `SOURCE_COMMIT` identifies a review candidate, not installation approval.
+
+## Current review candidate
+
+The pinned source includes shared per-user platform pages, bounded SpotifyPlus category/pagination browsing and a physical Real rendering path. Browser artifacts include synthetic page layouts and all five renderer modes, alongside the generated integration package. See [source validation and remaining work](https://github.com/thaianyboas/aureon-dashboard/blob/69265df00452fa61053ff370941d49f4b1f9087c/floor-studio/PLATFORM_VALIDATION_2026-10-30.md). These tests do not establish real Home Assistant, device, streaming, migration or visual acceptance. Development and production acceptance remain incomplete; stable HACS promotion remains blocked.
