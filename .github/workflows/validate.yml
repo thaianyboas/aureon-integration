@@ -1,0 +1,26 @@
+name: Validate AUREON integration distribution
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out integration distribution repository
+        uses: actions/checkout@v4
+      - name: Verify pre-release guard
+        shell: bash
+        run: |
+          if test -d custom_components/neonplan3d; then
+            echo "::error::AUREON integration has been promoted without a verified runtime release gate."
+            exit 1
+          fi
+          test -f README.md
+          test -f .github/workflows/candidate.yml
+          echo "PASS: integration repository remains unpromoted; official Home Assistant installation unaffected."
