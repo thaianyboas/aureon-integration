@@ -50,7 +50,7 @@ jobs:
         run: |
           npm run build
           git diff --exit-code -- floor-studio/neonplan3d-main/custom_components/neonplan3d/frontend floor-studio/neonplan3d-main/site/import/neonplan-import.js
-      - name: Validate music, platform pages and five-mode renderer without Home Assistant
+      - name: Validate music, platform pages, native editor and five-mode renderer without Home Assistant
         working-directory: source
         env:
           CHROME_BIN: /usr/bin/google-chrome
@@ -77,5 +77,6 @@ jobs:
             source/build/music-browser/
             source/build/platform-browser/
             source/build/floor-browser/
+            source/build/editor-browser/
           if-no-files-found: error
           retention-days: 14
