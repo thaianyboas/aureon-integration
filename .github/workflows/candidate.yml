@@ -1,37 +1,70 @@
-name: Prepare AUREON integration candidate
-
+name: Build pinned AUREON integration candidate
 on:
+  push:
+    branches: [master]
   workflow_dispatch:
-
 permissions:
   contents: read
-
 jobs:
   candidate:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out AUREON Dashboard source
+      - uses: actions/checkout@v4
+        with:
+          path: distribution
+      - name: Read reviewed source revision
+        id: source
+        working-directory: distribution
+        run: |
+          revision=$(cat SOURCE_COMMIT)
+          [[ "$revision" =~ ^[a-f0-9]{40}$ ]] || exit 1
+          echo "revision=$revision" >> "$GITHUB_OUTPUT"
+      - name: Check out exact AUREON source
         uses: actions/checkout@v4
         with:
           repository: thaianyboas/aureon-dashboard
-          ref: master
+          ref: ${{ steps.source.outputs.revision }}
           path: source
           persist-credentials: false
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '22'
-      - name: Package integration candidate
+          node-version: '24.22.1'
+          cache: npm
+          cache-dependency-path: source/floor-studio/neonplan3d-main/frontend/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Validate public source and frozen stable distribution
         working-directory: source
-        run: node scripts/package-hacs-integration-candidate.mjs
-      - name: Verify candidate manifest and checksums
+        run: npm run validate
+      - name: Install exact frontend dependencies
         working-directory: source
-        run: node scripts/verify-hacs-integration-candidate.mjs
-      - name: Verify migration contract
+        run: npm ci --prefix floor-studio/neonplan3d-main/frontend
+      - name: Run frontend, module and publication gate tests
         working-directory: source
-        run: node scripts/check-neonplan-migration-contract.mjs
-      - name: Upload candidate for review (not a release)
-        uses: actions/upload-artifact@v4
+        run: |
+          npm test
+          python -m unittest discover -s floor-studio/tests -p 'test_*.py'
+      - name: Rebuild and verify committed bundles
+        working-directory: source
+        run: |
+          npm run build
+          git diff --exit-code -- floor-studio/neonplan3d-main/custom_components/neonplan3d/frontend floor-studio/neonplan3d-main/site/import/neonplan-import.js
+      - name: Install backend test dependencies
+        working-directory: source/floor-studio/neonplan3d-main
+        run: pip install -r requirements_test.txt
+      - name: Run isolated backend tests (no installation)
+        working-directory: source/floor-studio/neonplan3d-main
+        run: pytest -q
+      - name: Package and verify review candidate
+        working-directory: source
+        run: |
+          node scripts/package-hacs-integration-candidate.mjs
+          node scripts/verify-hacs-integration-candidate.mjs
+          node scripts/check-neonplan-migration-contract.mjs
+      - name: Record installation block
+        run: echo 'Build candidate only. No Home Assistant runtime acceptance or HACS promotion. Stable v0.28.0 preserved.' >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
         with:
           name: aureon-integration-candidate
           path: source/build/neonplan3d-hacs-integration-candidate/

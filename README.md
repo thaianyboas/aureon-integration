@@ -10,7 +10,7 @@ The authoritative source, tests and build scripts are in [AUREON Dashboard](http
 
 ## Candidate build
 
-The [Prepare AUREON integration candidate](../../actions/workflows/candidate.yml) workflow can be started manually from the Actions tab. It checks out the dashboard source, packages the integration, checks its checksums and migration contract, and uploads a **review-only Actions artifact**. It does not commit to `main`, publish a release, or change any Home Assistant installation.
+The [Prepare AUREON integration candidate](../../actions/workflows/candidate.yml) workflow runs on pushes to `master` and can also be started manually. It checks out the exact dashboard commit recorded in `SOURCE_COMMIT`, installs locked dependencies, runs frontend/module/backend and publication-gate tests, rebuilds and verifies committed bundles, packages the integration with the upstream license and source provenance, checks its checksums and migration contract, and uploads a **review-only Actions artifact**. It does not commit generated integration files, publish a release, or change any Home Assistant installation.
 
 ## Safety
 
@@ -21,3 +21,7 @@ The [Prepare AUREON integration candidate](../../actions/workflows/candidate.yml
 - No Home Assistant runtime test or HACS installation is claimed.
 
 See [distribution strategy](https://github.com/thaianyboas/aureon-dashboard/blob/master/floor-studio/DISTRIBUTION_TARGET.md) and [migration and rollback](https://github.com/thaianyboas/aureon-dashboard/blob/master/floor-studio/NEONPLAN_MIGRATION_AND_ROLLBACK.md).
+
+## Development branch
+
+Verified changes are published directly to `master`, without development branches or releases. `main` is retained as the original preparation checkpoint. The repository remains unpromoted: no `custom_components` installation payload is published on either branch. `SOURCE_COMMIT` identifies a review candidate, not installation approval.
