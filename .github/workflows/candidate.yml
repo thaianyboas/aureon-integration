@@ -1,0 +1,39 @@
+name: Prepare AUREON integration candidate
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out AUREON Dashboard source
+        uses: actions/checkout@v4
+        with:
+          repository: thaianyboas/aureon-dashboard
+          ref: master
+          path: source
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Package integration candidate
+        working-directory: source
+        run: node scripts/package-hacs-integration-candidate.mjs
+      - name: Verify candidate manifest and checksums
+        working-directory: source
+        run: node scripts/verify-hacs-integration-candidate.mjs
+      - name: Verify migration contract
+        working-directory: source
+        run: node scripts/check-neonplan-migration-contract.mjs
+      - name: Upload candidate for review (not a release)
+        uses: actions/upload-artifact@v4
+        with:
+          name: aureon-integration-candidate
+          path: source/build/neonplan3d-hacs-integration-candidate/
+          if-no-files-found: error
+          retention-days: 14
