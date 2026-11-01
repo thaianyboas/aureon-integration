@@ -2111,5 +2111,18 @@
  "aureon_wall_remove": "Remover divisória",
  "aureon_wall_restore": "Restaurar parede",
  "aureon_wall_hint": "Arraste a parede para movê-la – os cômodos vizinhos acompanham (Shift: só este trecho). Delete remove apenas a divisória; os cômodos continuam.",
- "aureon_wall_outer_keep": "Uma parede externa não é apagada; o cômodo continua."
+ "aureon_wall_outer_keep": "Uma parede externa não é apagada; o cômodo continua.",
+ "aureon_paint_title": "Cor da parede",
+ "aureon_paint_custom": "Cor livre",
+ "aureon_paint_clear": "Remover cor",
+ "aureon_paint_hint": "Fosca e lisa nas paredes internas do cômodo – aparece no 3D.",
+ "aureon_paint_none": "Nenhuma cor escolhida: as paredes ficam como estão.",
+ "aureon_paint_white": "Branco",
+ "aureon_paint_warm_white": "Branco quente",
+ "aureon_paint_sand": "Areia",
+ "aureon_paint_greige": "Greige",
+ "aureon_paint_sage": "Sálvia",
+ "aureon_paint_terracotta": "Terracota",
+ "aureon_paint_blue_grey": "Cinza-azulado",
+ "aureon_paint_charcoal": "Grafite"
 }

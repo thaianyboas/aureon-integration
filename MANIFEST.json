@@ -2,7 +2,7 @@
   "domain": "neonplan3d",
   "version": "2.0.7",
   "source_repository": "thaianyboas/aureon-dashboard",
-  "source_commit": "f64cfc6de3fe62e3ec610034f910ddaf555ec9e1",
+  "source_commit": "429f6437a368bd3b6814a5bc7c203ae4c8ea48c6",
   "installation_approved": false,
   "files": [
     {
@@ -48,6 +48,10 @@
     {
       "path": "custom_components/neonplan3d/diagnostics_report.py",
       "sha256": "ab6741e914f540db2196698c620b9f5825eca00b1d7370c60584f5099cb081a8"
+    },
+    {
+      "path": "custom_components/neonplan3d/frontend/THIRD_PARTY_PATHTRACE.txt",
+      "sha256": "27f4b45cc80e3d5e2a6ff831d05e22426ce486c2b7767c33cb8e7c4157afdfbb"
     },
     {
       "path": "custom_components/neonplan3d/frontend/fonts/bricolage-grotesque-LICENSE.txt",
@@ -115,7 +119,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/lang/pt.json",
-      "sha256": "22748c79770c09a8a07fd80ece72a6848a70629829019e57ac027c3c25d3e448"
+      "sha256": "009bc2720ec966950494986ac8970faccab993381ad7119919b1ac4ccc9ca33c"
     },
     {
       "path": "custom_components/neonplan3d/frontend/lang/ro.json",
@@ -135,15 +139,15 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-3d.js",
-      "sha256": "45cbfa3c58a4bbbc9de3b4ac30be2b07d1c849184c12d51bd686f8abad1d9756"
+      "sha256": "b45d1b1c61040d31e7173fdd95d72d609ed68bd00a38bf86537032456c23e2c9"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-card-editor.js",
-      "sha256": "fd740aa1407b7c468f9b1915bda79cdf52dd115967e5d7c6adb4748f2543f7f9"
+      "sha256": "f8d9b344efe80fbff46881daea7733b0baf7ad93661506e3c77648d039c28310"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-editor.js",
-      "sha256": "6973a3d1d38db21afa6e756222c7f6f1c710f7bcef8ecaa62168de8eaa4c8061"
+      "sha256": "13810c5a3ca4464917430010e8f2837ae4b0442a618d01ee01e13e2cc60055a1"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-fun.js",
@@ -154,8 +158,12 @@
       "sha256": "290798f95ef55b88e517c72168a0089094c77cacd5c4fdbc3fd939d9b580765c"
     },
     {
+      "path": "custom_components/neonplan3d/frontend/neonplan3d-pathtrace.js",
+      "sha256": "6a03b1fdaeab36fa6d6e2d7c3fdc1403b20a1162a344f6bc2b55c25b20b0a070"
+    },
+    {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-timetravel.js",
-      "sha256": "ecfc9e4e171189359f56e0ee6f6eb64641a32f2e3858a57a40f148a580024a8b"
+      "sha256": "481e74c38f2d22f9f8e48add14c3b56d78f68a551e3c1bee551660a3b3ce5b0d"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-voice.js",
@@ -163,7 +171,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d.js",
-      "sha256": "84066fbae0911d54f133428199ecf7e1f93acd9d85dd668f7298f2e7058d3a93"
+      "sha256": "2e3c67bc12c07487dbf13f222a5c44173e8b23b49a35306630a8b6052b1c1eb3"
     },
     {
       "path": "custom_components/neonplan3d/license.py",
