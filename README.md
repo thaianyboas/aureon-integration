@@ -41,3 +41,13 @@ Share-template exports now remove nested HA links, local module/action/media set
 The latest source also embeds the original native card in Startseite and preserves the shared music controller, destination and dashboard shell across internal navigation. See the [implementation checkpoint](https://github.com/thaianyboas/aureon-dashboard/blob/7995e8e3c160139c83e060e29b095201bdae0844/floor-studio/HOME_MEDIA_CHECKPOINT_2026-10-31.md). Premium room images, private uploads and native room thumbnails remain pending; visual and production acceptance remain incomplete.
 
 The pinned candidate adds native room/object/opening bindings with server admin validation, revision conflict handling and isolated persistence tests. It audits all 615 entries of the supplied NeonPlan3D 2.0.7 ZIP and records source invariants plus ten side-by-side native editor scenarios. Official private licensing APIs and supporting ESP32/pack-signing sources are restored; storefront calls remain absent from public UI and startup. See the [fidelity matrix](https://github.com/thaianyboas/aureon-dashboard/blob/70235d3877bab23509877c0739c2b005208bffb5/floor-studio/NEONPLAN_FIDELITY_AUDIT.md). This is not a 100% fidelity, completed visual design or installation claim. No intermediate Home Assistant test is requested.
+
+## Conflict with the official NeonPlan 3D (HACS)
+
+This package and the official *NeonPlan 3D* repository install into the same folder
+(`custom_components/neonplan3d`). Keep only **one** of them in HACS. If the official one is also
+installed and updated, it overwrites these files: the page then shows e.g. "frontend 2.0.9 /
+backend 2.0.7" and AUREON Floor Studio shows a warning. Fix: back up, remove the official
+NeonPlan 3D from HACS, redownload "NeonPlan3D AUREON (owner test)", restart Home Assistant and
+reload the page (Companion app: Settings → Companion app → Debugging → Reset frontend cache).
+The plan itself is stored in Home Assistant (`.storage/neonplan3d.*`) and is not removed with the files.
