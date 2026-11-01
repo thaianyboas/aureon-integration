@@ -2,7 +2,11 @@
 
 Dedicated **HACS Integration distribution repository** for the AUREON Floor Studio Python backend and NeonPlan3D frontend assets.
 
-**Status: preparation only — NOT READY TO INSTALL.** The repository intentionally does not yet contain `custom_components/neonplan3d` on its default branch. Do not add this repository to HACS yet.
+**Status: owner test package (2026-11-01).** `master` now carries the generated `custom_components/neonplan3d` package built from the dashboard commit in `SOURCE_COMMIT`, published at the owner's request so she can test AUREON 0.29.0-test.1 in her own Home Assistant. It is not a final release and not a visual approval.
+
+- Same domain `neonplan3d` as the official NeonPlan3D integration: it **replaces** it and keeps the same storage (`.storage/neonplan3d.*`). Never install both. Make a full Home Assistant backup first.
+- Add `https://github.com/thaianyboas/aureon-integration` in HACS as a custom repository of type *Integration*, branch `master`. Rollback: remove it in HACS, download the official NeonPlan3D again, restart.
+- See [OWNER_TEST_2026-11-01.md](https://github.com/thaianyboas/aureon-dashboard/blob/master/OWNER_TEST_2026-11-01.md).
 
 ## Source of truth
 
@@ -14,7 +18,7 @@ The [Prepare AUREON integration candidate](../../actions/workflows/candidate.yml
 
 ## Safety
 
-- Keep the official NeonPlan3D integration installed in production until migration and rollback are validated.
+- Production migration and rollback are being validated by the owner's test; keep a full backup.
 - The modified integration uses the same `neonplan3d` domain as the official version. Do not install both in one Home Assistant instance.
 - Do not upload apartment floorplans, tokens, licenses, or paid asset packs to this public repository.
 - Preserve stable AUREON Dashboard v0.28.0 until release gates pass.

@@ -17,10 +17,12 @@ jobs:
       - name: Verify pre-release guard
         shell: bash
         run: |
+          # Owner test publication (authorized 2026-10-31): the package must carry its manifest and source pin.
           if test -d custom_components/neonplan3d; then
-            echo "::error::AUREON integration has been promoted without a verified runtime release gate."
-            exit 1
+            test -f MANIFEST.json && test -f hacs.json && test -f LICENSE
+            python3 -c "import json;m=json.load(open('MANIFEST.json'));assert m['source_commit']==open('SOURCE_COMMIT').read().strip(), 'package not built from SOURCE_COMMIT';assert m['domain']=='neonplan3d'"
+            echo "Owner test package present (not a final release)."
           fi
           test -f README.md
           test -f .github/workflows/candidate.yml
-          echo "PASS: integration repository remains unpromoted; official Home Assistant installation unaffected."
+          echo "PASS: integration repository guard (owner test package allowed, no automatic installation)."
