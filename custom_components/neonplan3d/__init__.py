@@ -17,6 +17,7 @@ from homeassistant.helpers.http import KEY_HASS
 from homeassistant.helpers.typing import ConfigType
 from homeassistant.loader import async_get_integration
 
+from . import aureon_models
 from .card_resource import (
     LOADER_FILE,
     LOADER_URL,
@@ -93,6 +94,8 @@ async def _async_register_static(hass: HomeAssistant) -> None:
         return
     hass.http.register_view(FrontendView())
     hass.data[_STATIC_REGISTERED] = True
+    # AUREON: the owner's own furniture models, for signed-in users only
+    aureon_models.async_register(hass)
 
 
 _MAIN_URL = f"{DOMAIN}_main_url"
