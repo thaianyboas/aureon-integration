@@ -139,7 +139,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-3d.js",
-      "sha256": "b45d1b1c61040d31e7173fdd95d72d609ed68bd00a38bf86537032456c23e2c9"
+      "sha256": "af0e74fd64be2bbcda2baf6e1515f6ff35f5363f629de94f9dce5f6f7392ede1"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-card-editor.js",
@@ -147,7 +147,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-editor.js",
-      "sha256": "13810c5a3ca4464917430010e8f2837ae4b0442a618d01ee01e13e2cc60055a1"
+      "sha256": "1c72e35e208a5763f1cb1b49e7a31fbd229c458146ef5eaa94aa5b1e8536330a"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-fun.js",
@@ -159,7 +159,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-pathtrace.js",
-      "sha256": "6a03b1fdaeab36fa6d6e2d7c3fdc1403b20a1162a344f6bc2b55c25b20b0a070"
+      "sha256": "988def4b08a8e3e1cfd71185043c0396591e501c1e0730f0acf73b4d1c616994"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-timetravel.js",
@@ -171,7 +171,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d.js",
-      "sha256": "2e3c67bc12c07487dbf13f222a5c44173e8b23b49a35306630a8b6052b1c1eb3"
+      "sha256": "d8993056d1c035ae832ec7a0cc66d71032ca20879e87588598efa4345563d77e"
     },
     {
       "path": "custom_components/neonplan3d/license.py",
