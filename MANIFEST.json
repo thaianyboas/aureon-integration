@@ -2,7 +2,7 @@
   "domain": "neonplan3d",
   "version": "2.0.7",
   "source_repository": "thaianyboas/aureon-dashboard",
-  "source_commit": "324c006ce3bfe35cd8a653c68d5b0dc18f236e1a",
+  "source_commit": "918f43b7dd767e8f1b8910eb2273590e0c893740",
   "installation_approved": false,
   "files": [
     {
@@ -19,7 +19,7 @@
     },
     {
       "path": "custom_components/neonplan3d/aureon_models.py",
-      "sha256": "2cc6ca628fbec4b073c9f8c0448c43be8e67b99ad0b4266c88888928562dfe0b"
+      "sha256": "f2254a73c2d9b1e582a5ae8de23b72eaf728971064e61bc7d057f70eb73a0a98"
     },
     {
       "path": "custom_components/neonplan3d/bindings.py",
@@ -119,7 +119,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/lang/pt.json",
-      "sha256": "6ea1625822541eaddc8bb4bc29a7313587c799ac3327898ece88c9c2e3d0720f"
+      "sha256": "aeb3d1f944d42a786f0e1046738839c40e292a2428cd33e3804dac4e491b5e53"
     },
     {
       "path": "custom_components/neonplan3d/frontend/lang/ro.json",
@@ -143,11 +143,11 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-card-editor.js",
-      "sha256": "dc5ad3f4c2c8b2d36eaaecb5667a6e2ae5d90a1f5ae2cdbee3e72244e607ec42"
+      "sha256": "e7673fc3bc9f04438a62cdac65558fbfa3c166e5ed9c9ce80772fc0254f4d8fe"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-editor.js",
-      "sha256": "af308e7bf042419d7cee14e36d1a3300c36e18933a93ab1eec9860111a97af71"
+      "sha256": "c22a864baedce0df4f954875507afeb211741048e7c78f0bbe3e57583e81147f"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-fun.js",
@@ -171,7 +171,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d.js",
-      "sha256": "2011a11e22a9e3942722051590e5ff9e11d71e81db8e6e872f30b3130a564526"
+      "sha256": "ddac4202c737b6cf9b75bb882712d0f61a06b572d52f6248339925ce25ce65f7"
     },
     {
       "path": "custom_components/neonplan3d/license.py",

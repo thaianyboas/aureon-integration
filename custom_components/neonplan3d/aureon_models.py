@@ -1,16 +1,20 @@
 """AUREON: the owner's own furniture models (.glb), served to signed-in Home Assistant users only.
 
 Files live in `<config>/aureon_models/` (outside `www`, so `/local` never serves them). Any authenticated user may
-read them, as with the building itself; anonymous requests get 401 from Home Assistant's auth middleware.
+read them, as with the building itself; anonymous requests get 401 from Home Assistant's auth middleware. Only
+administrators may add models (a .zip or one .glb from the editor's "Import furniture"); nothing is ever deleted.
 """
 
 from __future__ import annotations
 
+import io
 import json
+import os
 from pathlib import Path
 import re
 import struct
 from typing import Any
+import zipfile
 
 from aiohttp import web
 from homeassistant.components import websocket_api
@@ -169,6 +173,123 @@ def list_models(config_dir: str) -> list[dict[str, Any]]:
     return out
 
 
+UPLOAD_URL = "/api/neonplan3d/aureon_models_upload"
+MAX_UPLOAD = 120 * 1024 * 1024
+MAX_MEMBERS = 400
+MAX_CATALOG = 1024 * 1024
+
+
+def _write_atomic(path: Path, data: bytes) -> None:
+    tmp = path.with_name(f".{path.name}.part")
+    tmp.write_bytes(data)
+    os.replace(tmp, path)
+
+
+def _valid_glb(data: bytes) -> bool:
+    """A binary glTF within the size limit whose JSON chunk parses and holds at least one mesh."""
+    if len(data) < 20 or data[:4] != b"glTF" or len(data) > MAX_BYTES:
+        return False
+    length, kind = struct.unpack("<II", data[12:20])
+    if kind != 0x4E4F534A or 20 + length > len(data):
+        return False
+    try:
+        doc = json.loads(data[20 : 20 + length])
+    except ValueError:
+        return False
+    return isinstance(doc, dict) and bool(doc.get("meshes"))
+
+
+def import_models(config_dir: str, data: bytes, name: str | None) -> dict[str, Any]:
+    """Stores uploaded models (a .zip or one .glb) in <config>/aureon_models (in the executor).
+
+    Only plain `.glb` names and `catalog.json` are taken from a zip (any folder inside it, the base name counts);
+    everything else is skipped. Nothing is deleted: a model of the same name is replaced, catalog entries are merged.
+    """
+    root = (Path(config_dir) / MODELS_DIR).resolve()
+    models: dict[str, bytes] = {}
+    catalog_raw: bytes | None = None
+    skipped: list[str] = []
+    if data[:4] == b"glTF":
+        if not name or not _NAME.match(name) or ".." in name:
+            raise ValueError("name")
+        models[name] = data
+    elif data[:2] == b"PK":
+        try:
+            archive = zipfile.ZipFile(io.BytesIO(data))
+        except zipfile.BadZipFile as err:
+            raise ValueError("zip") from err
+        infos = [i for i in archive.infolist() if not i.is_dir()]
+        if len(infos) > MAX_MEMBERS or sum(i.file_size for i in infos) > MAX_UPLOAD * 3:
+            raise ValueError("too_large")
+        for info in infos:
+            base = info.filename.replace("\\", "/").rsplit("/", 1)[-1]
+            if base.startswith("._") or base.startswith("."):
+                continue  # macOS resource forks and hidden files
+            if base == CATALOG and info.file_size <= MAX_CATALOG:
+                catalog_raw = archive.read(info)
+            elif _NAME.match(base) and ".." not in base and info.file_size <= MAX_BYTES:
+                models[base] = archive.read(info)
+            else:
+                skipped.append(base[:120])
+    else:
+        raise ValueError("format")
+    bad = sorted(n for n, d in models.items() if not _valid_glb(d))
+    for n in bad:
+        del models[n]
+    root.mkdir(parents=True, exist_ok=True)
+    added, replaced = [], []
+    for n, d in sorted(models.items()):
+        (replaced if (root / n).exists() else added).append(n)
+        _write_atomic(root / n, d)
+    names = 0
+    if catalog_raw is not None:
+        try:
+            incoming = json.loads(catalog_raw.decode("utf-8"))
+        except (UnicodeDecodeError, ValueError):
+            incoming = None
+        files = incoming.get("files") if isinstance(incoming, dict) else None
+        if isinstance(files, dict):
+            try:
+                current = json.loads((root / CATALOG).read_text(encoding="utf-8"))
+            except (OSError, ValueError):
+                current = {}
+            merged = (
+                current.get("files") if isinstance(current, dict) and isinstance(current.get("files"), dict) else {}
+            )
+            for key, info in list(files.items())[:MAX_LIST]:
+                if isinstance(key, str) and _NAME.match(key) and ".." not in key and isinstance(info, dict):
+                    merged[key] = {k: info[k] for k in ("name", "type", "mount_y", "mirror") if k in info}
+                    names += 1
+            _write_atomic(root / CATALOG, json.dumps({"files": merged}, ensure_ascii=False, indent=1).encode("utf-8"))
+    return {"added": added, "replaced": replaced, "invalid": bad, "skipped": skipped[:50], "names": names}
+
+
+class AureonModelUploadView(HomeAssistantView):
+    """POST a .zip or one .glb (raw body, `?name=` for a single model); administrators only."""
+
+    url = UPLOAD_URL
+    name = f"{DOMAIN}:aureon_models_upload"
+    requires_auth = True
+
+    async def post(self, request: web.Request) -> web.Response:
+        hass: HomeAssistant = request.app[KEY_HASS]
+        user = request.get("hass_user")
+        if user is None or not user.is_admin:
+            raise web.HTTPForbidden
+        body = bytearray()
+        async for chunk in request.content.iter_chunked(1 << 16):
+            body += chunk
+            if len(body) > MAX_UPLOAD:
+                return self.json({"error": "too_large"}, status_code=413)
+        try:
+            result = await hass.async_add_executor_job(
+                import_models, hass.config.config_dir, bytes(body), request.query.get("name")
+            )
+        except ValueError as err:
+            return self.json({"error": str(err)}, status_code=400)
+        return self.json(result)
+
+
 @websocket_api.websocket_command({vol.Required("type"): "neonplan3d/aureon_models/list"})
 @websocket_api.async_response
 async def ws_list_models(hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]) -> None:
@@ -179,9 +300,10 @@ async def ws_list_models(hass: HomeAssistant, connection: websocket_api.ActiveCo
 
 @callback
 def async_register(hass: HomeAssistant) -> None:
-    """Register the view and the list command once per run (views cannot be unregistered)."""
+    """Register the views and the list command once per run (views cannot be unregistered)."""
     if hass.data.get(_REGISTERED):
         return
     hass.http.register_view(AureonModelView())
+    hass.http.register_view(AureonModelUploadView())
     websocket_api.async_register_command(hass, ws_list_models)
     hass.data[_REGISTERED] = True
