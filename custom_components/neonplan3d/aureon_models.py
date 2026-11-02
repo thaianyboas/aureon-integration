@@ -155,8 +155,8 @@ def list_models(config_dir: str) -> list[dict[str, Any]]:
     catalog = _catalog(root)
     out = []
     for file in sorted(root.iterdir())[:MAX_LIST]:
-        if model_file(config_dir, file.name) is None:
-            continue
+        if model_file(config_dir, file.name) is None or file.name.startswith("pet-"):
+            continue  # pet models (e.g. pet-golden-retriever.glb) are read by the pets, not placed as furniture
         size = glb_bounds(file)
         if size is None:
             continue

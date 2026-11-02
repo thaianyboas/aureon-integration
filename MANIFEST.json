@@ -2,7 +2,7 @@
   "domain": "neonplan3d",
   "version": "2.0.7",
   "source_repository": "thaianyboas/aureon-dashboard",
-  "source_commit": "c66a318b4a07b7958cea3dbfdaf33710905af8cb",
+  "source_commit": "49f592104ee6a4b314a73052d227875153570a98",
   "installation_approved": false,
   "files": [
     {
@@ -19,7 +19,7 @@
     },
     {
       "path": "custom_components/neonplan3d/aureon_models.py",
-      "sha256": "f2254a73c2d9b1e582a5ae8de23b72eaf728971064e61bc7d057f70eb73a0a98"
+      "sha256": "b247b86ef05fc6c29e00e81a37beedb2121e7304697def68d3e346971d9e61b6"
     },
     {
       "path": "custom_components/neonplan3d/bindings.py",
@@ -119,7 +119,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/lang/pt.json",
-      "sha256": "6fd1a18f05a986e423287adbd438ee496821848578bee062102a055296db49f8"
+      "sha256": "c27cc4eae8a4f63012a8e1c53c9c9e5facd3ed1b1b06f027745742911af89998"
     },
     {
       "path": "custom_components/neonplan3d/frontend/lang/ro.json",
@@ -139,19 +139,19 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-3d.js",
-      "sha256": "35df4fb698e029eb8712f67d006b0c3af2e2c0d590f1a834a6614b7950821394"
+      "sha256": "6c0cb2c81d4fdf9cceaf345beda9f58d12dd9048dffd33165b0c5d0e6dfb4d68"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-card-editor.js",
-      "sha256": "951fe106b7a847d48a3ce9b4977a18c9eb33d98476b8b1f9e72993d6f3d2665e"
+      "sha256": "a53725ca129dcb81d928c3781abd95d88b112929ca581e56dcecf9d39388ab98"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-editor.js",
-      "sha256": "68a2f760eb9aea5e4632842dddbc4059e86b0b0bac780f5a04af1bcf0e63a1a8"
+      "sha256": "cfddf6818f6e841ab09c1eccc7b77396b40db1913eafe4d680e7a6c8e5b81e8f"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-fun.js",
-      "sha256": "ced01afd0041d57f0f244d59c8293132dc8ad180391a9dca30cd29fa335931d3"
+      "sha256": "45a568384c7b9c622a49dcc96f03fdb4010617663aeb8884fe9ad01de737da2e"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-locate.js",
@@ -163,7 +163,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-timetravel.js",
-      "sha256": "34a8d623d4213c36bc4ef58d78df154eb746345ee195b1f38dc1cef53263bdf6"
+      "sha256": "5fe426776a6db7f3e5dc6e677eaee715de04dff4bfa44140018a0bfecefffaee"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-voice.js",
@@ -171,7 +171,15 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d.js",
-      "sha256": "585e6e70e7495e049e5e464403356e57a2c7a8bcc81cd0941489781e48d92fb4"
+      "sha256": "d3a0c02cf884e4495dc910f73d10bb8036d12b31c4b4ef7ed74c394e2f94cde2"
+    },
+    {
+      "path": "custom_components/neonplan3d/frontend/pets/THIRD_PARTY_PETS.txt",
+      "sha256": "b5eec0765e760b80a0a3e4c9b3c60c6cc6554cf799273ef02b16625027be98e6"
+    },
+    {
+      "path": "custom_components/neonplan3d/frontend/pets/golden-retriever.glb",
+      "sha256": "7e4046f1ef6dcc827088d2217faeb2c30565a6d93291e81438aff13b8142fa85"
     },
     {
       "path": "custom_components/neonplan3d/license.py",

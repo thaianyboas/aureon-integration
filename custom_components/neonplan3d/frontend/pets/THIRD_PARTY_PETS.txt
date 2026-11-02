@@ -1,0 +1,12 @@
+golden-retriever.glb
+
+"Golden Retriever Dog 3D Model (Free)" by iRahulRajput (Sketchfab user rt699448)
+https://sketchfab.com/3d-models/golden-retriever-dog-3d-model-free-4d32f856099c4baca05da2da485c24c1
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+The author marks the model as generated with AI.
+
+Changes made for AUREON: mesh reduced from about 700,000 to 25,000 triangles, textures reduced to 1024 px,
+the emissive texture removed, metalness set to 0, scaled to 0.72 m height and centred with the feet at y = 0.
+At run time AUREON adds a skeleton (shoulders, hips, neck, tail) and skin weights so the dog walks, lies down
+and sleeps. No warranties are given by the licensor; the licensor does not endorse AUREON.
