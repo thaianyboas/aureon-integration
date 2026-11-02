@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           path: distribution
       - name: Read reviewed source revision
@@ -24,18 +24,18 @@ jobs:
           [[ "$revision" =~ ^[a-f0-9]{40}$ ]] || exit 1
           echo "revision=$revision" >> "$GITHUB_OUTPUT"
       - name: Check out exact AUREON source
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           repository: thaianyboas/aureon-dashboard
           ref: ${{ steps.source.outputs.revision }}
           path: source
           persist-credentials: false
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v7
         with:
           node-version: '24.22.1'
           cache: npm
           cache-dependency-path: source/floor-studio/neonplan3d-main/frontend/package-lock.json
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.13'
       - name: Validate public source and frozen stable distribution
@@ -89,7 +89,7 @@ jobs:
           PY
       - name: Record installation block
         run: echo 'Build candidate only. No Home Assistant runtime acceptance or HACS promotion. Stable v0.28.0 preserved.' >> "$GITHUB_STEP_SUMMARY"
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: aureon-integration-candidate
           path: |
