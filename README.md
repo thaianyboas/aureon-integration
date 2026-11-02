@@ -12,6 +12,10 @@ Dedicated **HACS Integration distribution repository** for the AUREON Floor Stud
 
 The authoritative source, tests and build scripts are in [AUREON Dashboard](https://github.com/thaianyboas/aureon-dashboard), branch `master`. This repository is for the eventual distribution of a reviewed, generated integration package. Do not maintain a second independent source fork.
 
+## CI and publishing
+
+See [CI.md](CI.md): what the two workflows prove, the publish order (commit the dashboard first, then package) and how to diagnose a failure.
+
 ## Candidate build
 
 The [Prepare AUREON integration candidate](../../actions/workflows/candidate.yml) workflow runs on pushes to `master` and can also be started manually. It checks out the exact dashboard commit recorded in `SOURCE_COMMIT`, installs locked dependencies, runs frontend/module/backend and publication-gate tests, rebuilds and verifies committed bundles, packages the integration with the upstream license and source provenance, checks its checksums and migration contract, and uploads a **review-only Actions artifact**. It does not commit generated integration files, publish a release, or change any Home Assistant installation.

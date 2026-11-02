@@ -5,11 +5,15 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: candidate-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   candidate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: distribution
       - name: Read reviewed source revision
@@ -20,18 +24,18 @@ jobs:
           [[ "$revision" =~ ^[a-f0-9]{40}$ ]] || exit 1
           echo "revision=$revision" >> "$GITHUB_OUTPUT"
       - name: Check out exact AUREON source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: thaianyboas/aureon-dashboard
           ref: ${{ steps.source.outputs.revision }}
           path: source
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '24.22.1'
           cache: npm
           cache-dependency-path: source/floor-studio/neonplan3d-main/frontend/package-lock.json
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.13'
       - name: Validate public source and frozen stable distribution
@@ -70,9 +74,22 @@ jobs:
           node scripts/package-hacs-integration-candidate.mjs
           node scripts/verify-hacs-integration-candidate.mjs
           node scripts/check-neonplan-migration-contract.mjs
+      - name: Committed package equals the package rebuilt from SOURCE_COMMIT
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          committed = {f['path']: f['sha256'] for f in json.load(open('distribution/MANIFEST.json'))['files'] if f['path'].startswith('custom_components/')}
+          rebuilt = {f['path']: f['sha256'] for f in json.load(open('source/build/neonplan3d-hacs-integration-candidate/MANIFEST.json'))['files'] if f['path'].startswith('custom_components/')}
+          diff = sorted(p for p in set(committed) | set(rebuilt) if committed.get(p) != rebuilt.get(p))
+          if diff:
+              print('FAIL [reproducible package] the committed package differs from a fresh build of SOURCE_COMMIT:', *diff[:10], sep='\n  ')
+              print('How to fix: repackage from that dashboard commit (scripts/package-hacs-integration-candidate.mjs) and copy the whole package.')
+              sys.exit(1)
+          print(f'PASS [reproducible package] {len(rebuilt)} files identical to a fresh build of SOURCE_COMMIT')
+          PY
       - name: Record installation block
         run: echo 'Build candidate only. No Home Assistant runtime acceptance or HACS promotion. Stable v0.28.0 preserved.' >> "$GITHUB_STEP_SUMMARY"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: aureon-integration-candidate
           path: |
