@@ -2,7 +2,7 @@
   "domain": "neonplan3d",
   "version": "2.0.7",
   "source_repository": "thaianyboas/aureon-dashboard",
-  "source_commit": "49f592104ee6a4b314a73052d227875153570a98",
+  "source_commit": "3c779cccc0026da6d3dd3f4da96706a837e9cf1c",
   "installation_approved": false,
   "files": [
     {
@@ -147,7 +147,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-editor.js",
-      "sha256": "cfddf6818f6e841ab09c1eccc7b77396b40db1913eafe4d680e7a6c8e5b81e8f"
+      "sha256": "4d0c9d1437697aacd03edc4ae2b17f11c21ca78316bd72d463e37490c51b8754"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-fun.js",
@@ -171,7 +171,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d.js",
-      "sha256": "d3a0c02cf884e4495dc910f73d10bb8036d12b31c4b4ef7ed74c394e2f94cde2"
+      "sha256": "d49c52abfd8be678545d8c903c6fdebcd952069a3998948bd0e93de8fc04280e"
     },
     {
       "path": "custom_components/neonplan3d/frontend/pets/THIRD_PARTY_PETS.txt",
