@@ -2,7 +2,7 @@
   "domain": "neonplan3d",
   "version": "2.0.7",
   "source_repository": "thaianyboas/aureon-dashboard",
-  "source_commit": "0734d587cdbea5fdbedca88d263b3433b8e8895d",
+  "source_commit": "0eb76cd5a029b86f65b49bbe31dcda98a5f027dc",
   "installation_approved": false,
   "files": [
     {
@@ -119,7 +119,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/lang/pt.json",
-      "sha256": "410c2ee555232f2f0879ce1ae6e9be0a1ad2234cf558b90a8270bd999302328b"
+      "sha256": "da35350b8ea6042351b9a372619b2c66499be768d4e0eda54289d133fbe126cd"
     },
     {
       "path": "custom_components/neonplan3d/frontend/lang/ro.json",
@@ -143,11 +143,11 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-card-editor.js",
-      "sha256": "3b0b500dc5bd8ddf59aaab0c71f03d7299b77c623fde21fcaafaa56e93c50140"
+      "sha256": "1bf4b8c3f07060ecf63bb2afc7487a4897b0d36379c34c8935175e529b53d661"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-editor.js",
-      "sha256": "0db10d319df4bdd768c9a9279f09c2de79be2b58a1918777cacd42d7333c5f37"
+      "sha256": "cd5674c0630ca39d2f4e3cc4d42bf062822cb1bcf9341cf3443dd0c42cd7ee9d"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-fun.js",
@@ -163,7 +163,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-timetravel.js",
-      "sha256": "34a8d623d4213c36bc4ef58d78df154eb746345ee195b1f38dc1cef53263bdf6"
+      "sha256": "40081cc953611a57e75a4a66ecb7cf2e271ddadcb48a98fe995101edb6789d7b"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-voice.js",
@@ -171,7 +171,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d.js",
-      "sha256": "77a49ad2ab62a588517870c3c6ffddebffa545afc258862140c70efa058c72a3"
+      "sha256": "84f693ae2f889e46dc8d2749db0b9d9184d01bd5450c6cff780c755c1f363fdb"
     },
     {
       "path": "custom_components/neonplan3d/license.py",

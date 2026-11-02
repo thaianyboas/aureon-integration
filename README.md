@@ -72,3 +72,13 @@ editor fixtures, including the owner's private backup (never in this repository)
 Redownload AUREON Integration in HACS, restart Home Assistant and refresh the
 browser. Updating only the dashboard does not install these editor resources.
 No physical iSG/phone or live owner HA validation has been claimed.
+
+
+## Plan loading recovery — 2026-11-02
+
+Building reads now end with a localized error and Retry after 12 seconds without
+an answer. Optional packs cannot block showing a received plan. Replacing the HA
+connection reloads the plan, and late responses cannot overwrite a recovered plan.
+All changes are generated from SOURCE_COMMIT. Browser tests simulate missing and
+late replies; no owner PC/iSG/phone latency improvement is claimed without an
+actual device measurement. Redownload this integration in HACS and restart HA.
