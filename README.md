@@ -55,3 +55,20 @@ backend 2.0.7" and AUREON Floor Studio shows a warning. Fix: back up, remove the
 NeonPlan 3D from HACS, redownload "NeonPlan3D AUREON (owner test)", restart Home Assistant and
 reload the page (Companion app: Settings → Companion app → Debugging → Reset frontend cache).
 The plan itself is stored in Home Assistant (`.storage/neonplan3d.*`) and is not removed with the files.
+
+
+## Imported plan outline editing — 2026-11-02
+
+Owner-requested editor update, built from the exact revision in SOURCE_COMMIT.
+In the 2D editor, select a room and enable **Edit plan outline**
+(**Editar contorno da planta** / **Grundrisskontur bearbeiten**). Walls then take
+priority over nearby furniture and openings; turn this off to select objects
+normally. Drag the visible wall or its corner handles, or pick any numbered edge
+in the room inspector and edit its endpoint coordinates. Remove/restore a wall
+without deleting its room or floor, including exterior walls and both sides of
+shared dividers. Undo/redo and parent save/reopen were checked in local compiled
+editor fixtures, including the owner's private backup (never in this repository).
+
+Redownload AUREON Integration in HACS, restart Home Assistant and refresh the
+browser. Updating only the dashboard does not install these editor resources.
+No physical iSG/phone or live owner HA validation has been claimed.
