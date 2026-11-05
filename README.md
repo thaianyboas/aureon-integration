@@ -2,10 +2,11 @@
 
 Dedicated **HACS Integration distribution repository** for the AUREON Floor Studio Python backend and NeonPlan3D frontend assets.
 
-**Status: owner test package (2026-11-01).** `master` now carries the generated `custom_components/neonplan3d` package built from the dashboard commit in `SOURCE_COMMIT`, published at the owner's request so she can test AUREON 0.29.0-test.1 in her own Home Assistant. It is not a final release and not a visual approval.
+**Status: owner test package.** `master` carries the generated `custom_components/aureon_floor` package built from the dashboard commit in `SOURCE_COMMIT`, for the owner's own Home Assistant. It is not a final release and not a visual approval.
 
-- Same domain `neonplan3d` as the official NeonPlan3D integration: it **replaces** it and keeps the same storage (`.storage/neonplan3d.*`). Never install both. Make a full Home Assistant backup first.
-- Add `https://github.com/thaianyboas/aureon-integration` in HACS as a custom repository of type *Integration*, branch `master`. Rollback: remove it in HACS, download the official NeonPlan3D again, restart.
+- **Own domain `aureon_floor` (since 2026-11-05, owner decision).** AUREON Floor Studio is separate from the official NeonPlan 3D: own folder, WebSocket commands, URLs (`/aureon_floor_static`, panel `/aureon-floor-studio`) and stores (`.storage/aureon_floor.*`). An update of the official integration can no longer replace it. On first start it **copies** plan, pictures, history, packs, pack licence, Assist and locating settings from `.storage/neonplan3d.*` (or the older `floorplan_3d.*`); those stores are never changed or deleted. Its own stores are never overwritten by a later copy.
+- The browser element names (`neonplan3d-panel`, `neonplan3d-card`) stay those of NeonPlan, so existing dashboard cards keep working. Therefore the official NeonPlan 3D should not stay installed next to it; when it is, AUREON shows a notification asking to remove it.
+- Add `https://github.com/thaianyboas/aureon-integration` in HACS as a custom repository of type *Integration*, branch `master`. Make a full Home Assistant backup before switching.
 - See [OWNER_TEST_2026-11-01.md](https://github.com/thaianyboas/aureon-dashboard/blob/master/OWNER_TEST_2026-11-01.md).
 
 ## Source of truth
@@ -23,7 +24,7 @@ The [Prepare AUREON integration candidate](../../actions/workflows/candidate.yml
 ## Safety
 
 - Production migration and rollback are being validated by the owner's test; keep a full backup.
-- The modified integration uses the same `neonplan3d` domain as the official version. Do not install both in one Home Assistant instance.
+- The integration uses its own domain `aureon_floor`; the official NeonPlan 3D should still not be installed next to it (shared browser element names).
 - Do not upload apartment floorplans, tokens, licenses, or paid asset packs to this public repository.
 - Preserve stable AUREON Dashboard v0.28.0 until release gates pass.
 - No Home Assistant runtime test or HACS installation is claimed.
@@ -46,16 +47,16 @@ The latest source also embeds the original native card in Startseite and preserv
 
 The pinned candidate adds native room/object/opening bindings with server admin validation, revision conflict handling and isolated persistence tests. It audits all 615 entries of the supplied NeonPlan3D 2.0.7 ZIP and records source invariants plus ten side-by-side native editor scenarios. Official private licensing APIs and supporting ESP32/pack-signing sources are restored; storefront calls remain absent from public UI and startup. See the [fidelity matrix](https://github.com/thaianyboas/aureon-dashboard/blob/70235d3877bab23509877c0739c2b005208bffb5/floor-studio/NEONPLAN_FIDELITY_AUDIT.md). This is not a 100% fidelity, completed visual design or installation claim. No intermediate Home Assistant test is requested.
 
-## Conflict with the official NeonPlan 3D (HACS)
+## Switching from the earlier package (domain `neonplan3d`) — 2026-11-05
 
-This package and the official *NeonPlan 3D* repository install into the same folder
-(`custom_components/neonplan3d`). Keep only **one** of them in HACS. If the official one is also
-installed and updated, it overwrites these files: the page then shows e.g. "frontend 2.0.9 /
-backend 2.0.7" and AUREON Floor Studio shows a warning. Fix: back up, remove the official
-NeonPlan 3D from HACS, redownload "NeonPlan3D AUREON (owner test)", restart Home Assistant and
-reload the page (Companion app: Settings → Companion app → Debugging → Reset frontend cache).
-The plan itself is stored in Home Assistant (`.storage/neonplan3d.*`) and is not removed with the files.
+Before 2026-11-05 this package and the official *NeonPlan 3D* both installed into `custom_components/neonplan3d`, so
+an update of the official one overwrote AUREON. Switching to the separated package:
 
+1. Full Home Assistant backup.
+2. HACS: remove the official *NeonPlan 3D* (if listed) and redownload *AUREON Floor Studio*; restart Home Assistant.
+3. Settings → Devices & services → Add integration → **AUREON Floor Studio** (once). The plan is copied over.
+4. Check the plan in the sidebar entry *AUREON Floor Studio*; then delete the old *NeonPlan 3D* entry in Devices &
+   services and, if HACS left it, the folder `custom_components/neonplan3d`. `.storage/neonplan3d.*` stays as a copy.
 
 ## Imported plan outline editing — 2026-11-02
 

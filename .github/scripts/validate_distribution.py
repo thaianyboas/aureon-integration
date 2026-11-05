@@ -17,7 +17,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-PACKAGE = ROOT / "custom_components" / "neonplan3d"
+PACKAGE = ROOT / "custom_components" / "aureon_floor"
 FAILURES: list[str] = []
 GH = os.environ.get("GITHUB_ACTIONS") == "true"
 
@@ -75,7 +75,7 @@ def check_integration_manifest() -> dict | None:
         ok("integration", "no package committed (allowed: repository without owner test package)")
         return None
     dirs = [p.name for p in (ROOT / "custom_components").iterdir() if p.is_dir()]
-    if dirs != ["neonplan3d"]:
+    if dirs != ["aureon_floor"]:
         fail("integration", f"custom_components must hold exactly one integration, found {sorted(dirs)}", "HACS installs one integration per repository; remove the others")
     manifest = load_json(PACKAGE / "manifest.json", "integration manifest")
     if manifest is None:
@@ -84,14 +84,14 @@ def check_integration_manifest() -> dict | None:
     for key in ("domain", "name", "codeowners", "documentation", "issue_tracker", "version", "iot_class", "integration_type"):
         if key not in manifest:
             problems.append(f"missing '{key}'")
-    if manifest.get("domain") != "neonplan3d":
-        problems.append(f"domain is {manifest.get('domain')!r}, expected 'neonplan3d'")
+    if manifest.get("domain") != "aureon_floor":
+        problems.append(f"domain is {manifest.get('domain')!r}, expected 'aureon_floor'")
     if not re.fullmatch(r"\d+\.\d+\.\d+([.-][0-9A-Za-z.-]+)?", str(manifest.get("version", ""))):
         problems.append(f"version {manifest.get('version')!r} is not a version string HACS accepts")
     if problems:
-        fail("integration manifest", "; ".join(problems), "the package must be built unchanged from aureon-dashboard", "custom_components/neonplan3d/manifest.json")
+        fail("integration manifest", "; ".join(problems), "the package must be built unchanged from aureon-dashboard", "custom_components/aureon_floor/manifest.json")
     else:
-        ok("integration manifest", f"domain neonplan3d, version {manifest['version']}")
+        ok("integration manifest", f"domain aureon_floor, version {manifest['version']}")
     # every Python file must compile (a syntax error would only show when Home Assistant loads it)
     bad = []
     with tempfile.TemporaryDirectory() as tmp:
@@ -138,7 +138,7 @@ def check_package_provenance(manifest: dict | None) -> None:
         )
     else:
         ok("source pin", f"package built from the pinned commit {pin[:12]}")
-    if package.get("domain") != "neonplan3d" or (manifest and package.get("version") != manifest.get("version")):
+    if package.get("domain") != "aureon_floor" or (manifest and package.get("version") != manifest.get("version")):
         fail("package manifest", "MANIFEST.json domain/version do not match the integration manifest", "repackage from aureon-dashboard", "MANIFEST.json")
     if package.get("installation_approved") is not False:
         fail("release guard", "MANIFEST.json must keep installation_approved: false (owner test package, not a release)", "repackage; releases need the documented approval", "MANIFEST.json")

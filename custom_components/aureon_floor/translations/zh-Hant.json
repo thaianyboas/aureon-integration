@@ -1,0 +1,13 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "AUREON Floor Studio",
+        "description": "在側邊欄新增一個頁面，用於繪製你的家並以 3D 檢視。"
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "AUREON Floor Studio 已經設定好了。"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "AUREON Floor Studio",
+        "description": "Legger til en side i sidepanelet der du tegner hjemmet ditt og ser det i 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "AUREON Floor Studio er allerede satt opp."
+    }
+  }
+}

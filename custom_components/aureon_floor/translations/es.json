@@ -1,0 +1,13 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "AUREON Floor Studio",
+        "description": "Añade una página en la barra lateral donde dibujas tu casa y la ves en 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "AUREON Floor Studio ya está configurado."
+    }
+  }
+}
