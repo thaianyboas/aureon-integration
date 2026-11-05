@@ -2,7 +2,7 @@
   "domain": "neonplan3d",
   "version": "2.0.7",
   "source_repository": "thaianyboas/aureon-dashboard",
-  "source_commit": "69857f112ccfff5592fabe957e7f6d10a81bf26b",
+  "source_commit": "61f28dbf83cce7b76d70435f7aab85241825290f",
   "installation_approved": false,
   "files": [
     {
@@ -119,7 +119,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/lang/pt.json",
-      "sha256": "99dc2d2bc1e6cac2d054b7a42ef6e5252206e5fa3650e1b8e43f7b837becf48d"
+      "sha256": "a1d931dda3f2ddbd4d94a00ad1bc5af281e8e57f942cd4fed992cc720547a782"
     },
     {
       "path": "custom_components/neonplan3d/frontend/lang/ro.json",
@@ -139,15 +139,15 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-3d.js",
-      "sha256": "6c0cb2c81d4fdf9cceaf345beda9f58d12dd9048dffd33165b0c5d0e6dfb4d68"
+      "sha256": "98903b949963379a5a949e3ca4d8cc259a5ee739330e4410b4bf0f694315e12b"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-card-editor.js",
-      "sha256": "65a437e16657aa5e0a9b3607b8ede9d53346a9faeb3fb857309941881edc3fa8"
+      "sha256": "72ac0302a61d4efccaae4fb3778bed1d0f6e5f5d8ae9a07603c2943d84deddac"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-editor.js",
-      "sha256": "8ed3c790493022d5a36f7c124919a51495c924155645d7adb28a46af21fc0d4e"
+      "sha256": "f12ce82b1bade94642eda47d58065632522654290406ddbfb7c63262eba77be0"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-fun.js",
@@ -163,7 +163,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-timetravel.js",
-      "sha256": "5fe426776a6db7f3e5dc6e677eaee715de04dff4bfa44140018a0bfecefffaee"
+      "sha256": "34a8d623d4213c36bc4ef58d78df154eb746345ee195b1f38dc1cef53263bdf6"
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d-voice.js",
@@ -171,7 +171,7 @@
     },
     {
       "path": "custom_components/neonplan3d/frontend/neonplan3d.js",
-      "sha256": "6817c3e8f3f24b96f3a49f608543fe8cb0ef4d2c41ed08a7974f6a0680584a4e"
+      "sha256": "71edeaa59bc734eef5eea0133d27feeda673a653498cfee59b4ffa81ce26a9fe"
     },
     {
       "path": "custom_components/neonplan3d/frontend/pets/THIRD_PARTY_PETS.txt",
