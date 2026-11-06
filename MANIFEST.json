@@ -1,8 +1,8 @@
 {
   "domain": "aureon_floor",
-  "version": "2.0.7",
+  "version": "3.0.1",
   "source_repository": "thaianyboas/aureon-dashboard",
-  "source_commit": "14b6cd73a76232343ec5705ad00dc8e71c871f2a",
+  "source_commit": "ee08d516eb7c63259573276cb88301d037b86247",
   "installation_approved": false,
   "files": [
     {
@@ -15,7 +15,11 @@
     },
     {
       "path": "custom_components/aureon_floor/__init__.py",
-      "sha256": "f77dee043445cb905df91641f46bc58b3758e21c76836cb272dfeb0c2655916c"
+      "sha256": "35aebbe6d4938c7bbc6699833520c110ebf90376e898e061a5c3a0bc3cae01b9"
+    },
+    {
+      "path": "custom_components/aureon_floor/announce.py",
+      "sha256": "d3a16cbef3d6b2f97282aaefdd6737f4f9059f76cdd10e0e892a21548a569633"
     },
     {
       "path": "custom_components/aureon_floor/aureon_models.py",
@@ -43,7 +47,7 @@
     },
     {
       "path": "custom_components/aureon_floor/const.py",
-      "sha256": "1917172c1f4cf0e0a5110f54c7ea60c4cbebefec10b330ee75e6cfc6edbb96d5"
+      "sha256": "b44cf46b1cba1273546e4bb43838fe30ffa0eb5bda3df26af84a8d2252276b2e"
     },
     {
       "path": "custom_components/aureon_floor/diagnostics_report.py",
@@ -75,87 +79,91 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/cs.json",
-      "sha256": "047ef48bfa60d528f80d7d41bd639a8292bc91057ba8b4cdb652a8d51cd4bfdb"
+      "sha256": "bd2bff138e5d2e3469a944541563d457a87a87f58083aeb3e7ea19ad57057cf4"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/da.json",
-      "sha256": "35b4668e56d66a80e2a0fcdf915a948583c7115fd81a2b03e6d6fe880dc374a2"
+      "sha256": "e49c5af6bb779a01e93d7514fa9b8d5726c555737cc92a2d9c015f0189b850dd"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/es.json",
-      "sha256": "07f50d3a232a0dea3f0e5179ee630f08e241113327b30362b2179ed679f55ab8"
+      "sha256": "827d1541090eaeabaf3595fa33813e02b37366fca5965773a8b9fb265063096c"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/fi.json",
-      "sha256": "43e08d0028add32cafd2a01f3a4230ba66d587b9e592a0f929125d927ad705c8"
+      "sha256": "5d398322bf42daf59728c8e56fa5b6c1620dc01720b90830afd49d983c607f9b"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/fr.json",
-      "sha256": "a184de19b65dc4bcc18aee852c567f0fc3c91ddc30b93aa286997d411cd0f64f"
+      "sha256": "eae25b678b0e2be6df85555d5677d38ff33e6773338c0e9a4b4c955fbd78b7c0"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/hu.json",
-      "sha256": "891b9bb4324d80ce3b9905780ab8c277c111375d856df273aa6ace3de3bb78d9"
+      "sha256": "e357fbf4a1bf9bf6f80a6e21f55713e9995ab8e1e8c39bbd22f364fa05bbb50a"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/it.json",
-      "sha256": "b065fb5fa32b3ca737626b838a68129264c2b4e57b91242a8227b89c3b3abe5a"
+      "sha256": "2fa93bffba16502f0e88740a40524eb70544ca6c99b343c308fda7d912c2ee78"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/nb.json",
-      "sha256": "70924a70a2d2272e09f1821c6bd45a7362c8b375cb6fc2c85d67edd881a8d0d8"
+      "sha256": "2f47d05232e1e4755967e22aed1557ad841e6da44cebe3c28093bad0a9f93705"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/nl.json",
-      "sha256": "be6c95671b9fb08d87ea33fcaddff88f7d1653f23b42a543f4051367112ea677"
+      "sha256": "46ef9719e1b3ac889b0d1a3dbd661341e5eda1b2f5c8597aaa0d39470e8193c1"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/nn.json",
-      "sha256": "5eccd9f6c69a210a8f7c908fb5bb83c5d60d097258059270c4644a70352d4bf6"
+      "sha256": "9efa9ebb8092fffdbcdaed86148272defcef6ae5b479c1fbc7296752102d3694"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/pl.json",
-      "sha256": "ff577f6b87d1bb80c9b3fa2884d3d6e930b1daf2b60f22d067142a665a300f1d"
+      "sha256": "46dcc8b7372f84c7ed6a629f519b4cfb30e652f9bcfcab38f6436de79164f559"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/pt.json",
-      "sha256": "a1d931dda3f2ddbd4d94a00ad1bc5af281e8e57f942cd4fed992cc720547a782"
+      "sha256": "0f989df5d8e9395d73f3eab5a26a3c644c7bea6a7b8a6348a035fcf15bb80d39"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/ro.json",
-      "sha256": "483406288d5b3d1b83ece20098659e00b861da5b1709cbf477a76f8938c0e7b3"
+      "sha256": "2c733b1c92bc699562c4d26f8345b1847a3e5c3bb1026b076fd5f0caef510251"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/lang/sk.json",
+      "sha256": "f8b47df3cfe85b36332319dee0455b5cd9da9cbbc4da451e7156a2b95f87eb8e"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/sl.json",
-      "sha256": "ef0933300e10399482a1f87c553aacf90a23eb4e1697777f6d1d19da8ec1196b"
+      "sha256": "49c7528f02c319eae01d88b455b839fbf7d70393d646e67a533575787e4fbe33"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/sv.json",
-      "sha256": "0d1cf35a4e7235069458a9c8d0f74178366e5ded67657276eeb3b7b3bf5cd98c"
+      "sha256": "234db68264c4a6d1f3230b232e42f874eec5e71b0d77521b17f154b24d2ae68f"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/zh.json",
-      "sha256": "aefc9a9bf8d02ac1a954dd549892c816f27922fc00ffe9481e9ecded4fb7dba2"
+      "sha256": "8031284d332185e40f25472c12252fdb5cdee4bc330b90bb755cb768d86c5c48"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-3d.js",
-      "sha256": "1977bf1c01cf43844a985f44ad8c9c668ebd959019ea590c3521ce888ae19ad7"
+      "sha256": "2a55d3d7c6007fb8dbed8358cf0066d2723578714e2fea8261697e63560a7d9b"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-card-editor.js",
-      "sha256": "4873465f21e1ec616ee94af26795e1d6eb1ab712ebbf0a1eef6734f3931fc3c9"
+      "sha256": "d3ed4e0cf01b8159fb811969ba92548cc221d9da72ebb412965da62e12b97565"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-editor.js",
-      "sha256": "81842ae29584c96634e9373c489eb553cb655272dfdb75c6af2c52bcf1c4428b"
+      "sha256": "b37a273616f45a6f1f21cb372d18360412e42ad389e0b281c7393134f69cf105"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-fun.js",
-      "sha256": "764b045d4f40e1899a2440cbc6924590aa4c316d87593d001be61cdbe89a3cbb"
+      "sha256": "0f80192e7638c45033852c37cef761da482c59362ec7a7978eb6126bf323bd70"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-locate.js",
-      "sha256": "7b55cc26e057703d8b73aecde83df75450ba87198dac8ca5e295a913f921761d"
+      "sha256": "1a76b6dcafe4ad7566d6776ac37f13808f97a3fba16e6804a19b515b9bb7db4d"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-pathtrace.js",
@@ -163,15 +171,15 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-timetravel.js",
-      "sha256": "9cd0ee31d79ec938a5ca610bc4a41521a4b5dfabccb1dc53a051fa5e2286b721"
+      "sha256": "3ee417a12c8788a511cc5b788f8688ded49b6fe24dd238a409df2de5947d3fa0"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-voice.js",
-      "sha256": "6a163fb4fb3dd6af4881025adbcec09831e3ec76b46161e7d8aab7963c78a335"
+      "sha256": "a711d619e94ddd2bf977bd3e3e1c74ea2b94bc3bc129335398f81d1eb4e08121"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d.js",
-      "sha256": "97f090e8d51b666b5f5d484b5d0474ef3342688e401c52d4e33cc96409b45638"
+      "sha256": "9c032401b54479c08d1fb19bf45bd8348ee5cb4366b0021420f0fc991e567f9a"
     },
     {
       "path": "custom_components/aureon_floor/frontend/pets/THIRD_PARTY_PETS.txt",
@@ -183,7 +191,7 @@
     },
     {
       "path": "custom_components/aureon_floor/license.py",
-      "sha256": "0190a06464a0cc2bf042d88b89c452be30df82dfe855e2c9e5ad8e8037f22244"
+      "sha256": "10b9f9103ec742235890dfbf03a332da698bc3816b8df7daea548aea729676a8"
     },
     {
       "path": "custom_components/aureon_floor/locate/__init__.py",
@@ -207,11 +215,11 @@
     },
     {
       "path": "custom_components/aureon_floor/locate/scanners.py",
-      "sha256": "0030ccc0cf456fff9f45392f04095d40b0c743ba46d8346648bece5c28d65e4a"
+      "sha256": "987aefe1dd8dafad6161dd9adab72b14d04f330bab839acb754e6361cf72eeba"
     },
     {
       "path": "custom_components/aureon_floor/locate/service.py",
-      "sha256": "195797f6aedeb6baf56ab04689188d088529823f3d93a11deb52fdc075a24d6b"
+      "sha256": "7dd6a758bb671a0a0b8ba6e7ea15b560f6880d78afba014aad54c4106d067b6c"
     },
     {
       "path": "custom_components/aureon_floor/locate/ws.py",
@@ -219,15 +227,19 @@
     },
     {
       "path": "custom_components/aureon_floor/manifest.json",
-      "sha256": "8a33240fbe923b5b1f45b9e2fa630ffcd2f98b22a2f9069eb023f43eb462e0c9"
+      "sha256": "e61f85ee1dc4c1a32644b9e4988adcfac0e02d51762c4af5e2cc02206d2d5e31"
     },
     {
       "path": "custom_components/aureon_floor/packs.py",
-      "sha256": "385225affe20c96832360902ba9f3048dda8906bdb40f77578583b68a8ea93fd"
+      "sha256": "dcb71e5f85353d3bdc61504eef01c09c791bf2fafc3ef97e0b3c50836daea55e"
     },
     {
       "path": "custom_components/aureon_floor/schema.py",
-      "sha256": "ed755b4fadd300052a2b9c907d6853cd1c8aacdac7a205e2f3547072b89abbad"
+      "sha256": "60fcdf00bcac8acc0e0d956928f3df3626a0cf92ed6eb53940bc9c4ca4561c3b"
+    },
+    {
+      "path": "custom_components/aureon_floor/screens.py",
+      "sha256": "a50fdcb6a7928ef455fd882c31c6e46fb247e3ae663452ea5d43975bcc5dc74f"
     },
     {
       "path": "custom_components/aureon_floor/sensor.py",
@@ -235,19 +247,19 @@
     },
     {
       "path": "custom_components/aureon_floor/services.yaml",
-      "sha256": "04a3ecf5d0be0ee5c81bd33ca6147c93aa8ec87dabeefb4d821ec9f370b4430b"
+      "sha256": "154821159ad8fb8b3484a1338a874ec603eb0f34b59ecbfadff1daf97457e5c2"
     },
     {
       "path": "custom_components/aureon_floor/storage.py",
-      "sha256": "8d97ff3bfbd4665199f90a0cdc58b7fd8c8006396bb9f632977bf5152a8ccfc1"
+      "sha256": "97ff5d818437ab33fd214af888af15dda078c9027e4f9fd73d57f52148602ecc"
     },
     {
       "path": "custom_components/aureon_floor/strings.json",
-      "sha256": "89ec9da66ab94e904e5bd4e5c8466e6e5d23d173c3c814563c157e783da27ee0"
+      "sha256": "ce533c7186b9769eb10c043fb605c1bf616df93a165426e743c87737339f22bf"
     },
     {
       "path": "custom_components/aureon_floor/timetravel.py",
-      "sha256": "22231c4dc79d152392bc7c16a5f829ab42426ff77903f8b2e147d9dfc1879a97"
+      "sha256": "23d5309a9fe28cef7455cf196e6cdf1269deda02ab43b7eb64856f991896729b"
     },
     {
       "path": "custom_components/aureon_floor/timetravel_rows.py",
@@ -263,11 +275,11 @@
     },
     {
       "path": "custom_components/aureon_floor/translations/de.json",
-      "sha256": "8fb716040de3f7f57a8a001681d5af8cb47c44b694290c6be4205020d0d9ceeb"
+      "sha256": "1d8c1c5975813dfe6d78fd5dfecab6f37103c4b819e6c698479a3304199f3fbd"
     },
     {
       "path": "custom_components/aureon_floor/translations/en.json",
-      "sha256": "89ec9da66ab94e904e5bd4e5c8466e6e5d23d173c3c814563c157e783da27ee0"
+      "sha256": "ce533c7186b9769eb10c043fb605c1bf616df93a165426e743c87737339f22bf"
     },
     {
       "path": "custom_components/aureon_floor/translations/es.json",
@@ -318,6 +330,10 @@
       "sha256": "27e83b5f60a970ee1121d2d98fcf004f0edd02936bae8cdf33b60d26fc4d1163"
     },
     {
+      "path": "custom_components/aureon_floor/translations/sk.json",
+      "sha256": "29d200d6da43985289f59d972032bc4aa2e72f4544de554be287b604b4503151"
+    },
+    {
       "path": "custom_components/aureon_floor/translations/sl.json",
       "sha256": "4d322cd6285e87c1df10b74931497ee1d5d3f52456c4d0243144bda61e6b00f3"
     },
@@ -335,11 +351,11 @@
     },
     {
       "path": "custom_components/aureon_floor/voice.py",
-      "sha256": "9f72909d8d668333160ab82a0f20a85ad74184eda8834af26dd01a79796a9b8a"
+      "sha256": "47fa355027dd134a946439e7c8c22de371608cdb3b082ca6d0d9dfd4f6b7a508"
     },
     {
       "path": "custom_components/aureon_floor/websocket.py",
-      "sha256": "907288200d2e370e2ce83a6148c855668d919a1ed2d5b98a89026659531d65b3"
+      "sha256": "758a23b0bc24f2effe76e19a50dd0f92aa26f5ff051b58f8ddd1ec9dde0b8d41"
     },
     {
       "path": "hacs.json",
