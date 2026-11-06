@@ -2,7 +2,7 @@
   "domain": "aureon_floor",
   "version": "3.0.1",
   "source_repository": "thaianyboas/aureon-dashboard",
-  "source_commit": "ee08d516eb7c63259573276cb88301d037b86247",
+  "source_commit": "508f215cfcc46165da65bb52d34c7b1ec20f689b",
   "installation_approved": false,
   "files": [
     {
@@ -30,12 +30,20 @@
       "sha256": "3acd71b2ab095c7c51c13f7456b42c389d4bd1a6be0a2316287daf6f7289c8b3"
     },
     {
+      "path": "custom_components/aureon_floor/brand/dark_icon.png",
+      "sha256": "f803e6a65f8185765a5bb818385e024c25b61d74f1f603b1d25f505e34b6dd84"
+    },
+    {
+      "path": "custom_components/aureon_floor/brand/dark_icon@2x.png",
+      "sha256": "97368410b02d5f2a4d1e83aecf3f24e54a31925e01b42b16dd66820c27cb5b95"
+    },
+    {
       "path": "custom_components/aureon_floor/brand/icon.png",
-      "sha256": "151ecee94eaccc696aa4c8163fc34b67468b4397ee0528499ee568013c9c7352"
+      "sha256": "f803e6a65f8185765a5bb818385e024c25b61d74f1f603b1d25f505e34b6dd84"
     },
     {
       "path": "custom_components/aureon_floor/brand/icon@2x.png",
-      "sha256": "48eb56b3b5afb8ab6e45f9930fbe6d5aeac2b0b17477abe8d1c2acc8ac0d2862"
+      "sha256": "97368410b02d5f2a4d1e83aecf3f24e54a31925e01b42b16dd66820c27cb5b95"
     },
     {
       "path": "custom_components/aureon_floor/card_resource.py",
@@ -155,7 +163,7 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-editor.js",
-      "sha256": "b37a273616f45a6f1f21cb372d18360412e42ad389e0b281c7393134f69cf105"
+      "sha256": "141f3ae5d693a5c57d0fa45059259251c6e88aa60eda1a1198d559aadd83b4ec"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-fun.js",
@@ -179,7 +187,7 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d.js",
-      "sha256": "9c032401b54479c08d1fb19bf45bd8348ee5cb4366b0021420f0fc991e567f9a"
+      "sha256": "84cfc7c27ca718bc04ac1836899d5b563bda1781e360858b467b6eee07ec3d84"
     },
     {
       "path": "custom_components/aureon_floor/frontend/pets/THIRD_PARTY_PETS.txt",
