@@ -2413,5 +2413,6 @@
  "card_rooms_leave": "Pode abrir outros cômodos",
  "card_rooms_leave_hint": "Desmarcado, o tablet fica nestes cômodos.",
  "theme_night": "Noite",
- "theme_real": "Real"
+ "theme_real": "Real",
+ "aureon_paint_side": "Cor deste lado – {room}"
 }

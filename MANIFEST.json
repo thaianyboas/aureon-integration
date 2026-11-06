@@ -2,7 +2,7 @@
   "domain": "aureon_floor",
   "version": "3.0.1",
   "source_repository": "thaianyboas/aureon-dashboard",
-  "source_commit": "508f215cfcc46165da65bb52d34c7b1ec20f689b",
+  "source_commit": "d8d73c06207bbb115ddb94dea330bc8e0acd700a",
   "installation_approved": false,
   "files": [
     {
@@ -131,7 +131,7 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/pt.json",
-      "sha256": "0f989df5d8e9395d73f3eab5a26a3c644c7bea6a7b8a6348a035fcf15bb80d39"
+      "sha256": "12cf7788c2cb354da4c184937b1acd7c16a3dcb514cf342f63dd00b30143e3d0"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/ro.json",
@@ -159,11 +159,11 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-card-editor.js",
-      "sha256": "d3ed4e0cf01b8159fb811969ba92548cc221d9da72ebb412965da62e12b97565"
+      "sha256": "b0a439bd086ff4e1aa2bf69ea61a64c2839223e05964a9ad42494f4265bed423"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-editor.js",
-      "sha256": "141f3ae5d693a5c57d0fa45059259251c6e88aa60eda1a1198d559aadd83b4ec"
+      "sha256": "41bdef19d217b88cf2ef51ff69e123f505d551ee97462827dea45ecc8fbbbb41"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-fun.js",
@@ -187,7 +187,7 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d.js",
-      "sha256": "84cfc7c27ca718bc04ac1836899d5b563bda1781e360858b467b6eee07ec3d84"
+      "sha256": "2d6feb9c1b965097d3673eb34db66c2a7953d7df128e5aefd5e49f77977b2100"
     },
     {
       "path": "custom_components/aureon_floor/frontend/pets/THIRD_PARTY_PETS.txt",
