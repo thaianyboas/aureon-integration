@@ -2414,5 +2414,11 @@
  "card_rooms_leave_hint": "Desmarcado, o tablet fica nestes cômodos.",
  "theme_night": "Noite",
  "theme_real": "Real",
- "aureon_paint_side": "Cor deste lado – {room}"
+ "aureon_paint_side": "Cor deste lado – {room}",
+ "aureon_outdoor": "Céu e entorno",
+ "aureon_outdoor_garden": "Céu vivo com jardim",
+ "aureon_outdoor_sky": "Só o céu vivo",
+ "aureon_outdoor_off": "Desligado (como antes)",
+ "aureon_outdoor_hint": "Nos visuais Dia e Real: um céu de verdade que segue a hora e o tempo (sol, nuvens, chuva, estrelas e lua), com grama, base, arbustos e árvores.",
+ "aureon_sun_arc": "Mostrar também o caminho do sol"
 }

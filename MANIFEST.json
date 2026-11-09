@@ -2,7 +2,7 @@
   "domain": "aureon_floor",
   "version": "3.0.1",
   "source_repository": "thaianyboas/aureon-dashboard",
-  "source_commit": "d8d73c06207bbb115ddb94dea330bc8e0acd700a",
+  "source_commit": "1a8056f691a616f5bb2045997ea7ce5fdce3b659",
   "installation_approved": false,
   "files": [
     {
@@ -82,6 +82,62 @@
       "sha256": "4ba7d3d096695818fe0686be4f1e82c6b05134e18a22260336130335027462dd"
     },
     {
+      "path": "custom_components/aureon_floor/frontend/images/AUREON_OUTDOOR_CREDITS.md",
+      "sha256": "131c830296d92519f58937f69f3627944e0404a9646eeb523b534aafe493f9ab"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/images/aureon-nature/bush.webp",
+      "sha256": "6d2e746cd63319718a65e068d0c39bd92c9547aa365b6024a35369bcb944a5cd"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/images/aureon-nature/grass-normal.jpg",
+      "sha256": "daf315b48d2dbd16d2b3a6302f2d15df8ecec9760d5e2c977ef9fbc6c232d62d"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/images/aureon-nature/grass.jpg",
+      "sha256": "3315501ed02505882b7452aeabaa6ce009a8ef80f5b94b6206ef0c54645f58ce"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/images/aureon-nature/tree-a.webp",
+      "sha256": "341b23ee7ed9280c21dc3abe8d4a11737a2fd8bea406bad2c9adb3581a81f1e6"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/images/aureon-nature/tree-b.webp",
+      "sha256": "47148d30a7adf6c5aad4f34cd22e663309875c56fbc400c538a18ba3a7be55c0"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/images/aureon-sky/clear.jpg",
+      "sha256": "43f1fbb9796d2e66123a996d2b148b0876a72c3a4e03b303de447b5f774d4c20"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/images/aureon-sky/dawn.jpg",
+      "sha256": "27efeb133eb8bdcec51a9ff5837e00ab8cb241f33831c386300886b541179a37"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/images/aureon-sky/day.jpg",
+      "sha256": "c89bf2892f1c96069a128b7d06984b676de0b77fe20103612ed492617ad9564e"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/images/aureon-sky/dusk.jpg",
+      "sha256": "d9c2539219a1a9c447aacf21ed3ac58b98652fe03bbc0a4f0f56e84aa44d5265"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/images/aureon-sky/mist.jpg",
+      "sha256": "75e5948e98778e71b06a24b959fe2d20c5a3bdd35b6f5fd1cd67bb20a2392049"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/images/aureon-sky/night.jpg",
+      "sha256": "a2b379464787677b69daaed2d154d2f06ac1b529c554693a5b9766383a8aab59"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/images/aureon-sky/overcast.jpg",
+      "sha256": "a3f2bf9dadef39e3efce49f6dd4fec6d8b53d6784ea9463808c4010b6cba9790"
+    },
+    {
+      "path": "custom_components/aureon_floor/frontend/images/aureon-sky/sunset.jpg",
+      "sha256": "c7de75cf71401b1c001a21245c96e1395ce9f12817e28ce35b94e4b5d969ab60"
+    },
+    {
       "path": "custom_components/aureon_floor/frontend/images/solar-pro.jpg",
       "sha256": "5e1d3e8f9b3ccf8dbdfa87baf80367d52652e5091ec3f64c41f8b53a54cb3b34"
     },
@@ -131,7 +187,7 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/pt.json",
-      "sha256": "12cf7788c2cb354da4c184937b1acd7c16a3dcb514cf342f63dd00b30143e3d0"
+      "sha256": "17ad94b5ee5bb1e8908e740c777897b072645184668cf4c90454f237244e55c5"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/ro.json",
@@ -155,15 +211,15 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-3d.js",
-      "sha256": "2a55d3d7c6007fb8dbed8358cf0066d2723578714e2fea8261697e63560a7d9b"
+      "sha256": "791c59db10b6eb2e4fe290167e573297cfae84bf11f46ead303879fda801b04c"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-card-editor.js",
-      "sha256": "b0a439bd086ff4e1aa2bf69ea61a64c2839223e05964a9ad42494f4265bed423"
+      "sha256": "75006a789a7e7beefe54756962fbe94b536be75fa6869f06c428faf05922fbc5"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-editor.js",
-      "sha256": "41bdef19d217b88cf2ef51ff69e123f505d551ee97462827dea45ecc8fbbbb41"
+      "sha256": "d8f78ec730fd527e1d0c49cbc8d57ecabe0555557f3a461ff973c383a6cd7a09"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-fun.js",
@@ -187,7 +243,7 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d.js",
-      "sha256": "2d6feb9c1b965097d3673eb34db66c2a7953d7df128e5aefd5e49f77977b2100"
+      "sha256": "3eab16d5f8ffa6dfcf574c8fa50048576845604c6bda6baaa551ea137e07d154"
     },
     {
       "path": "custom_components/aureon_floor/frontend/pets/THIRD_PARTY_PETS.txt",
@@ -243,7 +299,7 @@
     },
     {
       "path": "custom_components/aureon_floor/schema.py",
-      "sha256": "60fcdf00bcac8acc0e0d956928f3df3626a0cf92ed6eb53940bc9c4ca4561c3b"
+      "sha256": "1027bc1017116210568e330214c0c1f1298f671707b8739a5c2cdb6d32ceb79b"
     },
     {
       "path": "custom_components/aureon_floor/screens.py",

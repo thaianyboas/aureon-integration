@@ -850,6 +850,9 @@ SETTINGS_SCHEMA = vol.Schema(
         vol.Optional("sun_shadow", default=True): bool,
         # what the sun's arc and compass ring stand around: the house (None, default) or the whole plot (#833)
         vol.Optional("sun_arc"): vol.Any(None, vol.In(["house", "plot"])),
+        # AUREON: living sky and garden around the plan in the realistic looks (None = garden), the sun arc under it
+        vol.Optional("aureon_outdoor"): vol.Any(None, vol.In(["garden", "sky", "off"])),
+        vol.Optional("aureon_sun_arc", default=False): bool,
         vol.Optional("window_glow", default=True): bool,
         # devices switch only in an opened room; elsewhere a tap opens the room
         vol.Optional("tap_in_room", default=False): bool,
