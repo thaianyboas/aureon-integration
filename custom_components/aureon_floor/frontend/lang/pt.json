@@ -2420,5 +2420,9 @@
  "aureon_outdoor_sky": "Só o céu vivo",
  "aureon_outdoor_off": "Desligado (como antes)",
  "aureon_outdoor_hint": "Nos visuais Dia e Real: um céu de verdade que segue a hora e o tempo (sol, nuvens, chuva, estrelas e lua), com grama, base, arbustos e árvores.",
- "aureon_sun_arc": "Mostrar também o caminho do sol"
+ "aureon_sun_arc": "Mostrar também o caminho do sol",
+ "furn_column": "Coluna",
+ "aureon_arrange": "Arrumar",
+ "aureon_swap": "Trocar por",
+ "aureon_open_editor": "Abrir no editor"
 }
