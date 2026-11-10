@@ -2326,7 +2326,7 @@
  "aureon_paint_wall_room": "Esta parede tem a cor do cômodo. Escolha uma cor para pintar só ela.",
  "aureon_paint_wall_own": "Só esta parede (o lado deste cômodo) tem cor própria.",
  "aureon_paint_wall_clear": "Igual ao cômodo",
- "aureon_paint_one_wall": "Toque numa parede (ela fica destacada na planta) e escolha a cor dela.",
+ "aureon_paint_one_wall": "Toque numa parede no desenho (ela fica destacada) e escolha a cor dela.",
  "aureon_paint_hint": "Fosca e lisa nas paredes internas do cômodo – aparece no 3D.",
  "aureon_paint_none": "Nenhuma cor escolhida: as paredes ficam como estão.",
  "aureon_paint_white": "Branco",
@@ -2424,5 +2424,12 @@
  "furn_column": "Coluna",
  "aureon_arrange": "Arrumar",
  "aureon_swap": "Trocar por",
- "aureon_open_editor": "Abrir no editor"
+ "aureon_open_editor": "Abrir no editor",
+ "aureon_ceiling_title": "Cor do teto",
+ "aureon_ceiling_hint": "O teto aparece nesta cor de dentro do cômodo (passeio); visto de cima ele fica invisível.",
+ "aureon_ceiling_none": "O teto não está pintado. Escolha uma cor para vê-lo em 3D.",
+ "aureon_ceiling_clear": "Tirar a cor do teto",
+ "studio_paint": "Pintar",
+ "aureon_paint_done": "Pronto",
+ "aureon_paint_mode_hint": "Toque numa parede da planta: ela acende e a cor dela aparece aqui. Toque dentro de um cômodo para pintar ele inteiro; a cor do teto fica logo abaixo."
 }
