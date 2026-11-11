@@ -22,6 +22,7 @@ from homeassistant.components.http import KEY_HASS, HomeAssistantView
 from homeassistant.core import HomeAssistant, callback
 import voluptuous as vol
 
+from . import aureon_fast
 from .const import DOMAIN
 
 MODELS_DIR = "aureon_models"
@@ -57,13 +58,14 @@ class AureonModelView(HomeAssistantView):
         file = await hass.async_add_executor_job(model_file, hass.config.config_dir, name)
         if file is None:
             raise web.HTTPNotFound
-        return web.FileResponse(
+        # AUREON: compressed (about a third smaller)
+        return await aureon_fast.async_file_response(
+            hass,
+            request,
             file,
-            headers={
-                "Content-Type": "model/gltf-binary",
-                "Cache-Control": "private, max-age=3600",
-                "X-Content-Type-Options": "nosniff",
-            },
+            "private, max-age=3600",
+            content_type="model/gltf-binary",
+            extra_headers={"X-Content-Type-Options": "nosniff"},
         )
 
 

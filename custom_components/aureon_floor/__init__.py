@@ -17,7 +17,7 @@ from homeassistant.helpers.http import KEY_HASS
 from homeassistant.helpers.typing import ConfigType
 from homeassistant.loader import async_get_integration
 
-from . import aureon_models
+from . import aureon_fast, aureon_models
 from .announce import async_setup_announce, async_unload_announce
 from .card_resource import (
     LOADER_FILE,
@@ -80,7 +80,10 @@ class FrontendView(HomeAssistantView):
         file = await hass.async_add_executor_job(_frontend_file, path)
         if file is None:
             raise web.HTTPNotFound
-        return web.FileResponse(file, headers={"Cache-Control": "no-cache"})
+        # AUREON: compressed, and hashed files are kept by the browser (aureon_fast)
+        return await aureon_fast.async_file_response(
+            hass, request, file, aureon_fast.frontend_cache_control(request, path, MAIN_BUNDLE)
+        )
 
 
 def _frontend_file(path: str) -> Path | None:
