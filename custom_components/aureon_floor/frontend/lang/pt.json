@@ -2480,5 +2480,10 @@
  "rcard_walls_front": "Paredes de frente",
  "rcard_start_view": "Vista inicial",
  "rcard_more": "Todas as opções",
- "rcard_painted": "{n} com cor própria"
+ "rcard_painted": "{n} com cor própria",
+ "overlaps_fix": "Corrigir divisões sobrepostas",
+ "overlaps_fix_short": "Corrigir",
+ "overlaps_none": "Nenhuma divisão sobreposta encontrada.",
+ "overlaps_fixed": "{n} sobreposição(ões) corrigida(s).",
+ "overlaps_partly": "{n} sobreposição(ões) corrigida(s); o resto precisa de “Fechar espaços” ou de um ajuste à mão."
 }
