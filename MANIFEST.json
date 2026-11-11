@@ -2,7 +2,7 @@
   "domain": "aureon_floor",
   "version": "3.0.1",
   "source_repository": "thaianyboas/aureon-dashboard",
-  "source_commit": "ac356509f3f8b818f1770c0ce116c0a016d9f6a7",
+  "source_commit": "12210b2484be42505fc8c8d5014bb82f78155170",
   "installation_approved": false,
   "files": [
     {
@@ -191,7 +191,7 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/pt.json",
-      "sha256": "b5367a0f15d1b299cc3e3e25ade6e10213597d9426173e2c28bbbb308a88329c"
+      "sha256": "74507dd3987e68678a7874a49ce5e852d618bde050ac874d401b547d7bc180ba"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/ro.json",
@@ -219,11 +219,11 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-card-editor.js",
-      "sha256": "137d3caaa2f3915c82a8d5090d837444043063510d1cb2a87b010372297ae8c1"
+      "sha256": "5f813f7fcaeb65acb5c410cccfc7f743f097d0aba7bd9627f0477e52be0c36e4"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-editor.js",
-      "sha256": "e8040bfafcecc66d3633e5e76eb37644b3e12a683b4dcc577f0f8fcc5ef83f3b"
+      "sha256": "0e8fc7186a800fb175ccb3a7bbf28a3e69157937df0b82ad0394d362da642273"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-fun.js",
@@ -239,7 +239,7 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-timetravel.js",
-      "sha256": "3ee417a12c8788a511cc5b788f8688ded49b6fe24dd238a409df2de5947d3fa0"
+      "sha256": "6b6d122e90efb20a6b0d4eb732df9af5e110d5f5408974e667f01b8158949c9e"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-voice.js",
@@ -247,7 +247,7 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d.js",
-      "sha256": "ce4e13922f7ecc23bc3d685c4b40c680eb078bdaa1ab11c71da449ed13d27b20"
+      "sha256": "74dac13db137458ec22cd4b817e236877e984fe81ddc2e831207831c0b3561ed"
     },
     {
       "path": "custom_components/aureon_floor/frontend/pets/THIRD_PARTY_PETS.txt",
