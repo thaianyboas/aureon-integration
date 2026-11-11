@@ -3316,7 +3316,7 @@ ${this.planLine?`plan: ${this.plan}
       <div class="fp3d-form fp3d-links">${e.map(i)}</div>
     </section>`:e.map(i)}renderRooms(e){return F`
       <g>${e.rooms.map(t=>{let n=t.points.map(i=>this.toScreen(i).join(",")).join(" ");return F`<polygon data-room=${t.id} class=${t.id===this._roomId?"fp3d-room fp3d-room-sel":"fp3d-room"} points=${n} />`})}</g>
-      ${this.renderEdgeHighlight()} ${this.renderAureonWallLine()} ${this.renderAureonPaintStrips(e)}
+      ${this.renderEdgeHighlight()} ${this.renderAureonWallLine()} ${this._aureonArea==="finish"?this.renderAureonPaintStrips(e):v}
       <g pointer-events="none">${e.rooms.map(t=>{let[n,i]=this.toScreen(qe(t.points));return F`<text class="fp3d-room-name" x=${n} y=${i-2}>${t.name}</text>
           <text class="fp3d-room-area" x=${n} y=${i+14}>${this.area(Ae(t.points))}</text>`})}</g>
     `}renderEdgeHighlight(){let e=this.room,t=this._edgeHi;if(!e||t===null||t>=e.points.length)return v;let[n,i]=this.toScreen(e.points[t]),[o,r]=this.toScreen(e.points[(t+1)%e.points.length]);return F`<line class="fp3d-edge-hi" pointer-events="none" x1=${n} y1=${i} x2=${o} y2=${r} />`}renderMeter(e){let t=this._doc.energy?.meter;if(!t||t.floor_id!==e.id)return v;let[n,i]=this.toScreen([t.x,t.z]);return F`<g class="fp3d-meter" transform="translate(${n} ${i})" pointer-events="none">
