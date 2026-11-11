@@ -2326,6 +2326,7 @@
  "aureon_paint_wall_room": "Esta parede tem a cor do cômodo. Escolha uma cor para pintar só ela.",
  "aureon_paint_wall_own": "Só esta parede (o lado deste cômodo) tem cor própria.",
  "aureon_paint_wall_clear": "Igual ao cômodo",
+ "aureon_paint_see3d": "Ver esta parede em 3D",
  "aureon_paint_one_wall": "Toque numa parede no desenho (ela fica destacada) e escolha a cor dela.",
  "aureon_paint_hint": "Fosca e lisa nas paredes internas do cômodo – aparece no 3D.",
  "aureon_paint_none": "Nenhuma cor escolhida: as paredes ficam como estão.",
