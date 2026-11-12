@@ -2508,5 +2508,8 @@
  "set_desc_modules": "Extensões instaladas",
  "set_desc_fun": "Extras sazonais e divertidos",
  "finish_acacia_tiles": "Ladrilhos de acácia",
- "finish_acacia_tiles_checker": "Ladrilhos de acácia alternados"
+ "finish_acacia_tiles_checker": "Ladrilhos de acácia alternados",
+ "column_paint_own": "Esta coluna tem cor própria.",
+ "column_paint_room": "Sem cor própria, a coluna fica com a cor das paredes do cômodo.",
+ "column_paint_clear": "Igual às paredes"
 }
