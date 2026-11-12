@@ -2,7 +2,7 @@
   "domain": "aureon_floor",
   "version": "3.0.1",
   "source_repository": "thaianyboas/aureon-dashboard",
-  "source_commit": "f3e40302a6904b0968b03997cf1498f4ecac673d",
+  "source_commit": "35ad4b6fcf2db866e3813175440362099d831523",
   "installation_approved": false,
   "files": [
     {
@@ -191,7 +191,7 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/pt.json",
-      "sha256": "6f87c76962ce3f3ae8794b4532272cd692a939a377d0c21d7c642e0179ec290f"
+      "sha256": "3e8873b2e34eee9fc0ac5d3013a6ff19016964b7d796951b2f9e157f2e22f476"
     },
     {
       "path": "custom_components/aureon_floor/frontend/lang/ro.json",
@@ -215,15 +215,15 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-3d.js",
-      "sha256": "6c47fe5141b610baa154ebccef2ee122c4de48aaadc4d17dda91cb5e08bb659c"
+      "sha256": "578a2da4c8c413e57fd061cdac3b7dd16e2a78c683021665dcee4fb9ddb0f82f"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-card-editor.js",
-      "sha256": "3bba29b878c82055b67b55b9c0533ae021f2a6b12ac40ad23ae8072ab785d88c"
+      "sha256": "357cb7b02113fcfb2fa2150e97086b7d57d77954d88297abd2b05a51c4c74b7f"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-editor.js",
-      "sha256": "a3ab06b5cf7fd55ad15fd28e45f1aee5ad2ebb6d702e228134c7953c78ec35b7"
+      "sha256": "d8211f2f8b8ccd302dc65db183571129f371fd422941fa340645c593f4a9520b"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-fun.js",
@@ -239,7 +239,7 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-timetravel.js",
-      "sha256": "6b6d122e90efb20a6b0d4eb732df9af5e110d5f5408974e667f01b8158949c9e"
+      "sha256": "385659a0d9cf9f3c4dfb14b305a97a92646ee1a51c98f363756b15518f8eee89"
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d-voice.js",
@@ -247,7 +247,7 @@
     },
     {
       "path": "custom_components/aureon_floor/frontend/neonplan3d.js",
-      "sha256": "c78ee7f849a60c5733c7fcffff2c2e6f25b9f4bcc6096b079df51eed7b8abdd0"
+      "sha256": "50140cf1f4498fcbf8111fd6349d00c53081a9d5506f21821d129ff245a99ab6"
     },
     {
       "path": "custom_components/aureon_floor/frontend/pets/THIRD_PARTY_PETS.txt",
